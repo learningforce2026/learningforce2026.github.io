@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Project page for sensorless external torque estimation and force-informed policy learning.">
+  <meta name="keywords" content="haptic teleoperation, force feedback, robot learning, contact-rich manipulation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Force Sensing and Force-Aware Policies</title>
+
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/theme-previews.css">
+</head>
+<body class="theme-lab">
+  <nav class="site-nav" aria-label="main navigation">
+    <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Open navigation menu" data-nav-toggle>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+    <div class="site-nav__links" id="site-nav-links" data-nav-links>
+      <a href="#abstract">Abstract</a>
+      <a href="#summary">Result Highlight</a>
+      <a href="#next">NEXT</a>
+      <a href="#first">FIRST</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero-section">
+      <div class="page-container page-container--wide">
+        <div class="hero-copy">
+          <h1 class="project-title">Learning Force Sensing and Force-Aware Policies for Any Commodity Robot Arm</h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="section abstract-section" id="abstract">
+      <div class="page-container page-container--narrow">
+        <div class="abstract-copy">
+          <p class="method-kicker">Abstract</p>
+          <p>Contact-rich manipulation requires force sensitivity, but many robot arms lack dedicated force sensors due to their high cost. We present <strong>Neural External Torque Estimation (NEXT)</strong>, a data-driven method that estimates external joint torques without needing any dedicated force sensors. NEXT trains in 1 minute from only 10 minutes of free-motion data, yet achieves estimates comparable to dedicated joint-torque sensors. NEXT enables force-feedback teleoperation on low-cost arms and improves policy learning through <strong>Force-Informed Re-Sampling Training (FIRST)</strong>, which re-samples the training batch distribution to emphasize critical task phases during behavior cloning. Across five long-horizon tasks, FIRST outperforms prior force-aware policies by over 17% in task progress. Together, NEXT and FIRST bring force-aware teleoperation and policy learning to off-the-shelf robots without additional sensing hardware.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight" id="summary">
+      <div class="page-container page-container--wide">
+        <div class="highlight-section-heading">
+          <h2>Result Highlight</h2>
+        </div>
+        <div class="highlight-rows highlight-rows--paired">
+          <section class="highlight-row">
+            <div class="highlight-row-heading">
+              <h3><span class="acronym-title"><span class="method-label method-label--next">NEXT</span>: <span class="acronym-word"><span class="acronym-letter">N</span>eural</span> <span class="acronym-word"><span class="acronym-letter">Ex</span>ternal</span> <span class="acronym-word"><span class="acronym-letter">T</span>orque</span> <span class="acronym-word">Estimation</span></span></h3>
+              <p>Estimates external joint torque without dedicated force sensors.</p>
+            </div>
+            <div class="highlight-video-row highlight-video-row--single">
+              <figure class="video-card highlight-card">
+                <div class="media-frame highlight-frame highlight-frame--piper highlight-carousel" data-highlight-carousel>
+                  <video autoplay muted loop playsinline preload="metadata">
+                    <source
+                      src="./static/videos/project/web/next/haptic-teleop/piper/stretch_nobaseline-web.mp4"
+                      type="video/mp4"
+                      data-highlight-carousel-source
+                      data-highlight-sources="./static/videos/project/web/next/haptic-teleop/piper/stretch_nobaseline-web.mp4|./static/videos/project/web/next/haptic-teleop/piper/push_no_baseline.mp4|./static/videos/project/web/next/haptic-teleop/piper/free_motion_no_baseline.mp4">
+                  </video>
+                  <button class="highlight-carousel-button highlight-carousel-button--prev" type="button" data-highlight-carousel-step="-1" aria-label="Previous NEXT highlight video"><span aria-hidden="true">&lsaquo;</span></button>
+                  <button class="highlight-carousel-button highlight-carousel-button--next" type="button" data-highlight-carousel-step="1" aria-label="Next NEXT highlight video"><span aria-hidden="true">&rsaquo;</span></button>
+                </div>
+              </figure>
+            </div>
+          </section>
+
+          <section class="highlight-row">
+            <div class="highlight-row-heading">
+              <h3><span class="acronym-title"><span class="method-label method-label--first">FIRST</span>: <span class="acronym-word"><span class="acronym-letter">F</span>orce-<span class="acronym-letter">I</span>nformed</span> <span class="acronym-word"><span class="acronym-letter">R</span>e-<span class="acronym-letter">S</span>ampling</span> <span class="acronym-word"><span class="acronym-letter">T</span>raining</span></span></h3>
+              <p>Re-samples the training batch distribution to emphasize critical task phases.</p>
+            </div>
+            <div class="highlight-video-row highlight-video-row--single highlight-video-stack highlight-carousel highlight-carousel--stack" data-highlight-carousel>
+              <figure class="video-card highlight-card">
+                <div class="media-frame highlight-frame highlight-frame--stacked highlight-frame--autonomous-label">
+                  <video autoplay muted loop playsinline preload="metadata" data-playback-rate="2">
+                    <source
+                      src="./static/videos/project/web/highlight/nist_task-web.mp4"
+                      type="video/mp4"
+                      data-highlight-carousel-source
+                      data-highlight-sources="./static/videos/project/web/highlight/nist_task-web.mp4|./static/videos/project/web/tasks/nist-belt-success-long-horizon-web.mp4|./static/videos/project/web/tasks/cap-screwing-success-web.mp4|./static/videos/project/web/tasks/nist-belt-robustness-black-pulley-web.mp4|./static/videos/project/web/tasks/lego-success-third-person-web.mp4">
+                  </video>
+                </div>
+              </figure>
+              <figure class="video-card highlight-card">
+                <div class="media-frame highlight-frame highlight-frame--stacked highlight-frame--tool-cleanup highlight-frame--autonomous-label">
+                  <video autoplay muted loop playsinline preload="metadata" data-playback-rate="2">
+                    <source
+                      src="./static/videos/project/tasks/tool-clean-up-success-2.mp4"
+                      type="video/mp4"
+                      data-highlight-carousel-source
+                      data-highlight-sources="./static/videos/project/tasks/tool-clean-up-success-2.mp4|./static/videos/project/web/tasks/tool-clean-up-success-1-web.mp4|./static/videos/project/web/tasks/lego-success-web.mp4|./static/videos/project/web/tasks/tool-clean-up-robustness-web.mp4">
+                  </video>
+                </div>
+              </figure>
+              <button class="highlight-carousel-button highlight-carousel-button--prev" type="button" data-highlight-carousel-step="-1" aria-label="Previous FIRST highlight videos"><span aria-hidden="true">&lsaquo;</span></button>
+              <button class="highlight-carousel-button highlight-carousel-button--next" type="button" data-highlight-carousel-step="1" aria-label="Next FIRST highlight videos"><span aria-hidden="true">&rsaquo;</span></button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="section method-section" id="next">
+      <div class="page-container page-container--wide">
+        <div class="method-section-heading">
+          <h2><span class="method-label method-label--next">NEXT</span>: <span class="acronym-title"><span class="acronym-word"><span class="acronym-letter">N</span>eural</span> <span class="acronym-word"><span class="acronym-letter">Ex</span>ternal</span> <span class="acronym-word"><span class="acronym-letter">T</span>orque</span> <span class="acronym-word">Estimation</span></span></h2>
+          <p>Data-driven external joint torque estimation without dedicated force-torque sensors.</p>
+        </div>
+
+        <div class="subsection-block next-proof-block">
+          <div class="next-claim">
+            <h3><span class="method-token method-token--next">NEXT</span> produces high-quality torque estimates on low-cost arms.</h3>
+            <div class="next-platform-chips" aria-label="supported low-cost arms">
+              <button class="next-platform-chip next-platform-chip--active" type="button" aria-pressed="true" data-next-platform="piper">Piper</button>
+              <button class="next-platform-chip" type="button" aria-pressed="false" data-next-platform="yam">Yam</button>
+              <span class="next-platform-chip next-platform-chip--muted">More to come</span>
+            </div>
+          </div>
+
+          <div class="next-demo-view next-demo-view--active" data-next-demo="piper">
+            <div class="next-demo-grid next-demo-grid--three">
+              <div class="next-demo-heading next-demo-heading--contact">
+                <h3>Contact</h3>
+              </div>
+              <div class="next-demo-heading">
+                <h3>Free Motion</h3>
+              </div>
+
+              <figure class="video-card">
+                <div class="media-frame next-demo-frame">
+                  <video autoplay muted loop playsinline preload="metadata">
+                    <source
+                      src="./static/videos/project/web/next/haptic-teleop/piper/stretch_nobaseline-web.mp4"
+                      type="video/mp4">
+                  </video>
+                </div>
+              </figure>
+              <figure class="video-card">
+                <div class="media-frame next-demo-frame">
+                  <video autoplay muted loop playsinline preload="metadata">
+                    <source
+                      src="./static/videos/project/web/next/haptic-teleop/piper/push_no_baseline.mp4"
+                      type="video/mp4">
+                  </video>
+                </div>
+              </figure>
+              <figure class="video-card">
+                <div class="media-frame next-demo-frame">
+                  <video autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/project/web/next/haptic-teleop/piper/free_motion_no_baseline.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </figure>
+              <p class="next-demo-caption next-demo-caption--contact"><span class="method-token method-token--next">NEXT</span> gives clean external contact signal and therefore enables haptic feedback teleoperation.</p>
+              <p class="next-demo-caption"><span class="method-token method-token--next">NEXT</span> stays near zero torque in free motion.</p>
+            </div>
+            <div class="next-baseline-actions">
+              <button class="next-baseline-toggle" type="button" aria-expanded="false" aria-controls="next-baseline-panel" data-next-baseline-toggle>Baseline Results</button>
+            </div>
+            <div class="next-baseline-panel" id="next-baseline-panel" data-next-baseline-panel hidden>
+              <div class="next-baseline-heading">
+                <h4>Baseline Results</h4>
+                <p>Model-based estimates on the same Piper motions.</p>
+              </div>
+              <div class="next-baseline-grid">
+                <article class="next-baseline-card">
+                  <h5>Contact Stretch</h5>
+                  <figure class="video-card">
+                    <div class="media-frame next-demo-frame">
+                      <video autoplay muted loop playsinline preload="metadata">
+                        <source src="./static/videos/project/web/next/haptic-teleop/piper/stretch-web.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </figure>
+                </article>
+                <article class="next-baseline-card">
+                  <h5>Contact Push</h5>
+                  <figure class="video-card">
+                    <div class="media-frame next-demo-frame">
+                      <video autoplay muted loop playsinline preload="metadata">
+                        <source src="./static/videos/project/web/next/haptic-teleop/piper/push-web.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </figure>
+                </article>
+                <article class="next-baseline-card">
+                  <h5>Free Motion</h5>
+                  <figure class="video-card">
+                    <div class="media-frame next-demo-frame">
+                      <video autoplay muted loop playsinline preload="metadata">
+                        <source src="./static/videos/project/web/next/haptic-teleop/piper/freemotion-web.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </figure>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <div class="next-demo-view" data-next-demo="yam" hidden>
+            <div class="next-demo-grid next-demo-grid--single">
+              <article class="next-demo-card">
+                <div class="next-demo-heading">
+                  <h3>Contact</h3>
+                </div>
+                <figure class="video-card">
+                  <div class="media-frame next-demo-frame">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="./static/videos/project/web/archive/haptic-teleop/unused-on-page/yam-web.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </figure>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection-block next-sensor-block">
+          <div class="next-sensor-claim">
+            <h3><span class="method-token method-token--next">NEXT</span> matches factory-level joint-torque sensors.</h3>
+            <p>We compare NEXT with factory-level external force-torque sensor on a Franka arm. NEXT closely matches the built-in external torque estimate without sensor-signal supervision.</p>
+          </div>
+
+          <div class="next-sensor-grid">
+            <div class="next-sensor-heading next-sensor-heading--contact">
+              <h3>Contact</h3>
+            </div>
+            <div class="next-sensor-heading">
+              <h3>Free Motion</h3>
+            </div>
+
+            <figure class="video-card">
+              <div class="media-frame next-sensor-frame">
+                <video autoplay muted loop playsinline preload="metadata">
+                  <source src="./static/videos/project/web/next/haptic-teleop/franka/shelf_side_by_side_external_next_twitter-web.mp4" type="video/mp4">
+                </video>
+              </div>
+            </figure>
+            <figure class="video-card">
+              <div class="media-frame next-sensor-frame">
+                <video autoplay muted loop playsinline preload="metadata">
+                  <source src="./static/videos/project/web/next/haptic-teleop/franka/table_foam_side_by_side_twitter-web.mp4" type="video/mp4">
+                </video>
+              </div>
+            </figure>
+            <figure class="video-card">
+              <div class="media-frame next-sensor-frame">
+                <video autoplay muted loop playsinline preload="metadata">
+                  <source src="./static/videos/project/web/next/haptic-teleop/franka/free_motion_side_by_side_twitter-web.mp4" type="video/mp4">
+                </video>
+              </div>
+            </figure>
+            <p class="next-sensor-caption next-sensor-caption--contact"><span class="method-token method-token--next">NEXT</span> tracks the built-in external torque estimate during contact.</p>
+            <p class="next-sensor-caption"><span class="method-token method-token--next">NEXT</span> stays near zero in free space with less noise.</p>
+          </div>
+          <div class="next-baseline-actions">
+            <button class="next-baseline-toggle" type="button" aria-expanded="false" aria-controls="next-franka-baseline-panel" data-next-baseline-toggle>Baseline Results</button>
+          </div>
+          <div class="next-baseline-panel" id="next-franka-baseline-panel" data-next-baseline-panel hidden>
+            <div class="next-baseline-heading">
+              <h4>Baseline Results</h4>
+              <p>Model-based estimates on the same Franka motions.</p>
+            </div>
+            <div class="next-baseline-grid">
+              <article class="next-baseline-card">
+                <h5>Contact Shelf</h5>
+                <figure class="video-card">
+                  <div class="media-frame next-sensor-frame">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="./static/videos/project/web/next/haptic-teleop/franka/with-baseline/franka-shelf-side-by-side-web.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </figure>
+              </article>
+              <article class="next-baseline-card">
+                <h5>Contact Foam</h5>
+                <figure class="video-card">
+                  <div class="media-frame next-sensor-frame">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="./static/videos/project/web/next/haptic-teleop/franka/with-baseline/franka-foam-side-by-side-web.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </figure>
+              </article>
+              <article class="next-baseline-card">
+                <h5>Free Motion</h5>
+                <figure class="video-card">
+                  <div class="media-frame next-sensor-frame">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="./static/videos/project/web/next/haptic-teleop/franka/with-baseline/franka-free-motion-side-by-side-web.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </figure>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection-block next-workflow-block">
+          <div class="next-workflow-claim">
+            <h3><span class="method-token method-token--next">NEXT</span> only needs 10 minutes of data and 1 minute of training.</h3>
+            <p>We fit a free-space inverse dynamics (FSID) model from short, contact-free motion. At deployment, NEXT subtracts the learned free-space torque from measured motor torque, leaving an external torque signal caused by contact.</p>
+          </div>
+
+          <div class="next-workflow-steps">
+            <article class="next-workflow-step">
+              <p class="next-step-label">Step 1</p>
+              <h3>Data Collection and FSID Model Training</h3>
+              <div class="next-workflow-pair">
+                <figure class="video-card next-workflow-video-card">
+                  <div class="media-frame next-workflow-media next-workflow-media--wide">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="./static/videos/project/web/next/haptic-teleop/piper/freemotion_raw-web.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </figure>
+                <figure class="next-workflow-diagram next-workflow-diagram--fsid">
+                  <img src="./static/images/project/next/fsid_simpl.png" alt="Simplified FSID training diagram.">
+                </figure>
+              </div>
+              <p class="next-workflow-caption">Data collection <strong>(&asymp; 10 min)</strong>; model training <strong>(&asymp; 1 min)</strong>.</p>
+            </article>
+
+            <article class="next-workflow-step">
+              <p class="next-step-label">Step 2</p>
+              <h3>Deploy to get external torque signal</h3>
+              <div class="next-workflow-pair">
+                <figure class="video-card next-workflow-video-card">
+                  <div class="media-frame next-workflow-media next-workflow-media--tall">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="./static/videos/project/web/next/haptic-teleop/piper/stretch_nobaseline.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </figure>
+                <figure class="next-workflow-diagram next-workflow-diagram--deployment">
+                  <img src="./static/images/project/next/deployment.png" alt="NEXT deployment diagram for external torque prediction.">
+                </figure>
+              </div>
+              <p class="next-workflow-caption">Subtract free-space torque to recover contact torque.</p>
+            </article>
+          </div>
+          <div class="next-realtime-actions">
+            <button class="next-baseline-toggle next-realtime-toggle" type="button" aria-expanded="false" aria-controls="next-realtime-panel" data-next-baseline-toggle>Show real-time data collection and deployment</button>
+          </div>
+          <div class="next-realtime-panel" id="next-realtime-panel" hidden>
+            <figure class="video-card next-realtime-card">
+              <div class="media-frame next-realtime-frame">
+                <video controls playsinline preload="metadata">
+                  <source src="./static/videos/project/web/next/realtime/real-time-rollout.mp4" type="video/mp4">
+                </video>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section method-section" id="first">
+      <div class="page-container page-container--wide">
+        <div class="method-section-heading">
+          <h2><span class="method-label method-label--first">FIRST</span>: <span class="acronym-title"><span class="acronym-word"><span class="acronym-letter">F</span>orce-<span class="acronym-letter">I</span>nformed</span> <span class="acronym-word"><span class="acronym-letter">R</span>e-<span class="acronym-letter">S</span>ampling</span> <span class="acronym-word"><span class="acronym-letter">T</span>raining</span></span></h2>
+          <p>Use estimated external torque to up-sample pre-contact and contact data during behavior cloning.</p>
+        </div>
+
+        <div class="subsection-block" id="contact-labeling">
+          <div class="subsection-heading">
+            <h3>Contact Phase Labeling</h3>
+            <p>External Torque signal from NEXT is used to segment demonstrations into free-space, pre-contact, and contact phases.</p>
+          </div>
+          <div class="contact-media contact-media--wide contact-media--split">
+            <p class="contact-phase-title contact-phase-title--left">Segment using external torque produced by <span class="method-token method-token--next">NEXT</span></p>
+            <p class="contact-phase-title contact-phase-title--right">Up-Sample Contact-Relevant Data</p>
+            <figure class="video-card contact-video-card contact-media-item--left">
+              <div class="media-frame panorama-frame contact-labeling-frame">
+                <video autoplay muted loop playsinline preload="metadata">
+                  <source src="./static/videos/project/web/first/contact-labeling/contact-labeling-rollout-web.mp4" type="video/mp4">
+                </video>
+              </div>
+            </figure>
+            <div class="contact-flow-arrow" aria-hidden="true"></div>
+            <figure class="video-card contact-image-card contact-media-item--right">
+              <div class="contact-image-frame">
+                <img src="./static/images/project/contact/contact-labeling-visualization.png" alt="Contact labeling visualization.">
+              </div>
+            </figure>
+            <p class="contact-phase-caption contact-phase-caption--left">Label free-space, pre-contact, and contact phases.</p>
+            <p class="contact-phase-caption contact-phase-caption--right">Up-sample pre-contact and contact examples.</p>
+          </div>
+        </div>
+
+        <div class="subsection-block" id="tasks">
+          <div class="subsection-heading">
+            <h3>Autonomous Policy Rollout 1X</h3>
+          </div>
+
+          <div class="first-task-grid">
+            <article class="first-task-card">
+              <div class="first-task-heading">
+                <p class="task-number">Task 01</p>
+                <h3>NIST Belt Assembly</h3>
+              </div>
+              <figure class="video-card task-primary">
+                <div class="media-frame first-task-frame">
+                  <video autoplay muted loop playsinline preload="metadata" poster="./static/videos/project/posters/tasks-nist-belt-success-long-horizon.jpg">
+                    <source src="./static/videos/project/web/tasks/nist-belt-success-web.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </figure>
+            </article>
+
+            <article class="first-task-card">
+              <div class="first-task-heading">
+                <p class="task-number">Task 02</p>
+                <h3>Cap Screwing</h3>
+              </div>
+              <figure class="video-card task-primary">
+                <div class="media-frame first-task-frame">
+                  <video autoplay muted loop playsinline preload="metadata" poster="./static/videos/project/posters/tasks-cap-screwing-success.jpg">
+                    <source src="./static/videos/project/web/tasks/cap-screwing-success-web.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </figure>
+            </article>
+
+            <article class="first-task-card">
+              <div class="first-task-heading">
+                <p class="task-number">Task 03</p>
+                <h3>NIST Insertion</h3>
+              </div>
+              <figure class="video-card task-primary">
+                <div class="media-frame first-task-frame">
+                  <video autoplay muted loop playsinline preload="metadata" poster="./static/videos/project/posters/tasks-nist-insertion-success.jpg">
+                    <source src="./static/videos/project/tasks/nist-insertion-success.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </figure>
+            </article>
+
+            <article class="first-task-card">
+              <div class="first-task-heading">
+                <p class="task-number">Task 04</p>
+                <h3>Tool Clean Up</h3>
+              </div>
+              <figure class="video-card task-primary">
+                <div class="media-frame first-task-frame">
+                  <video autoplay muted loop playsinline preload="metadata" poster="./static/videos/project/posters/tasks-nist-good-success.jpg">
+                    <source src="./static/videos/project/web/tasks/nist-good-success-web.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </figure>
+            </article>
+
+            <article class="first-task-card">
+              <div class="first-task-heading">
+                <p class="task-number">Task 05</p>
+                <h3>LEGO Assembly</h3>
+              </div>
+              <figure class="video-card task-primary">
+                <div class="media-frame first-task-frame">
+                  <video autoplay muted loop playsinline preload="metadata" poster="./static/videos/project/posters/tasks-lego-success.jpg">
+                    <source src="./static/videos/project/web/tasks/lego-success-web.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </figure>
+            </article>
+          </div>
+
+          <div class="task-combined-block">
+            <div class="task-showcase-heading">
+              <h4>Long-Horizon NIST Board Task (Insertion + Belt Assembly)</h4>
+            </div>
+            <article class="task-combined-card">
+              <figure class="video-card task-primary">
+                <div class="media-frame first-task-frame">
+                  <video autoplay muted loop playsinline preload="metadata" poster="./static/videos/project/posters/tasks-nist-belt-success-long-horizon.jpg">
+                    <source src="./static/videos/project/web/tasks/nist-belt-success-long-horizon-web.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </figure>
+            </article>
+          </div>
+
+          <div class="task-showcase-block">
+            <div class="task-showcase-heading">
+              <h4>Robustness</h4>
+              <p>Re-sampling near-contact data during training improves robustness to task perturbations.</p>
+            </div>
+            <div class="task-showcase-grid task-showcase-grid--three">
+              <article class="task-showcase-card">
+                <h5>NIST Belt Assembly</h5>
+                <figure class="video-card task-secondary">
+                  <div class="media-frame first-task-frame">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="./static/videos/project/web/tasks/nist-belt-robustness-black-pulley-web.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </figure>
+              </article>
+              <article class="task-showcase-card">
+                <h5>Tool Insertion</h5>
+                <figure class="video-card task-secondary">
+                  <div class="media-frame first-task-frame">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="./static/videos/project/web/tasks/tool-clean-up-robustness-web.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </figure>
+              </article>
+              <article class="task-showcase-card">
+                <h5>Pill Pick Up</h5>
+                <figure class="video-card task-secondary">
+                  <div class="media-frame first-task-frame">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="./static/videos/project/web/tasks/cap-screwing-robustness-web.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </figure>
+              </article>
+            </div>
+          </div>
+
+          <div class="task-showcase-block">
+            <div class="task-showcase-heading">
+              <h4>Recovery Behavior</h4>
+              <p>Re-sampling near-contact data during training encourages more recovery behavior than the baseline.</p>
+            </div>
+            <div class="task-showcase-grid task-showcase-grid--three" id="recovery-extra-grid">
+              <article class="task-showcase-card">
+                <h5>Belt Alignment Recovery</h5>
+                <figure class="video-card task-secondary">
+                  <div class="media-frame first-task-frame">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="./static/videos/project/web/first/recovery/orange-belt-recover-web.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </figure>
+              </article>
+              <article class="task-showcase-card">
+                <h5>Belt Fitting Recovery</h5>
+                <figure class="video-card task-secondary">
+                  <div class="media-frame first-task-frame">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="./static/videos/project/web/first/recovery/belt-recovery-web.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </figure>
+              </article>
+              <article class="task-showcase-card">
+                <h5>Misaligned Cap Recovery</h5>
+                <figure class="video-card task-secondary">
+                  <div class="media-frame first-task-frame">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="./static/videos/project/web/first/recovery/screw-recovery-web.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </figure>
+              </article>
+              <article class="task-showcase-card" data-recovery-extra hidden>
+                <h5>Belt Fitting Recovery</h5>
+                <figure class="video-card task-secondary">
+                  <div class="media-frame first-task-frame">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="./static/videos/project/web/first/recovery/orange-scoop-recovery-web.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </figure>
+              </article>
+              <article class="task-showcase-card" data-recovery-extra hidden>
+                <h5>Belt Fitting Recovery</h5>
+                <figure class="video-card task-secondary">
+                  <div class="media-frame first-task-frame">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="./static/videos/project/web/first/recovery/belt-recovery-short-web.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </figure>
+              </article>
+              <article class="task-showcase-card" data-recovery-extra hidden>
+                <h5>Misaligned Cap Recovery</h5>
+                <figure class="video-card task-secondary">
+                  <div class="media-frame first-task-frame">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="./static/videos/project/web/first/recovery/screw-recovery-1-web.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </figure>
+              </article>
+            </div>
+            <div class="task-showcase-actions">
+              <button class="task-showcase-toggle" type="button" aria-expanded="false" aria-controls="recovery-extra-grid" data-recovery-toggle>Show more</button>
+            </div>
+          </div>
+
+          <div class="task-showcase-block">
+            <div class="task-showcase-heading">
+              <h4>Vision + Torque Policy without FIRST</h4>
+              <p>Without force-informed re-sampling, the baseline often fails to succeed in critical contact-rich task phases .</p>
+            </div>
+            <div class="task-showcase-grid task-showcase-grid--three">
+              <article class="task-showcase-card">
+                <h5>NIST Insertion + Belt</h5>
+                <figure class="video-card task-secondary">
+                  <div class="media-frame first-task-frame">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="./static/videos/project/web/tasks/nist-belt-failure-alignment-web.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </figure>
+                <p>Fails to align the belt with the pulley.</p>
+              </article>
+              <article class="task-showcase-card">
+                <h5>Cap Screwing</h5>
+                <figure class="video-card task-secondary">
+                  <div class="media-frame first-task-frame">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="./static/videos/project/web/tasks/cap-screwing-failure-overturn-web.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </figure>
+                <p>Over-rotates after the cap is tightened.</p>
+              </article>
+              <article class="task-showcase-card">
+                <h5>Tool Clean Up</h5>
+                <figure class="video-card task-secondary">
+                  <div class="media-frame first-task-frame">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="./static/videos/project/web/tasks/tool-clean-up-failure-insertion-web.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </figure>
+                <p>Fails to align and insert the tool.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    (function () {
+      var themes = {
+        lab: 'theme-lab',
+        graphite: 'theme-graphite',
+        blueprint: 'theme-blueprint'
+      };
+      var params = new URLSearchParams(window.location.search);
+      var selected = themes[params.get('style')] ? params.get('style') : 'lab';
+      document.body.classList.remove('theme-lab', 'theme-graphite', 'theme-blueprint');
+      document.body.classList.add(themes[selected]);
+      document.querySelectorAll('[data-style-option]').forEach(function (link) {
+        if (link.getAttribute('data-style-option') === selected) {
+          link.setAttribute('aria-current', 'page');
+        }
+      });
+    }());
+
+    (function () {
+      var nav = document.querySelector('.site-nav');
+      var navToggle = document.querySelector('[data-nav-toggle]');
+      var navLinks = document.querySelector('[data-nav-links]');
+      if (!nav || !navToggle || !navLinks) {
+        return;
+      }
+
+      function setNavOpen(isOpen) {
+        nav.classList.toggle('site-nav--open', isOpen);
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      }
+
+      navToggle.addEventListener('click', function () {
+        setNavOpen(!nav.classList.contains('site-nav--open'));
+      });
+
+      navLinks.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          setNavOpen(false);
+        });
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          setNavOpen(false);
+        }
+      });
+    }());
+
+    (function () {
+      function playVideo(video) {
+        var playPromise = video.play();
+        if (playPromise && typeof playPromise.catch === 'function') {
+          playPromise.catch(function () {});
+        }
+      }
+
+      function applyPlaybackRate(video) {
+        var rate = Number(video.getAttribute('data-playback-rate'));
+        if (!rate || rate <= 0) {
+          return;
+        }
+
+        video.defaultPlaybackRate = rate;
+        video.playbackRate = rate;
+      }
+
+      function swapVideoSource(source, nextSrc) {
+        var video = source.closest('video');
+        if (!video || !nextSrc || source.getAttribute('src') === nextSrc) {
+          return;
+        }
+
+        source.setAttribute('src', nextSrc);
+        applyPlaybackRate(video);
+        video.load();
+
+        if (!video.closest('[hidden]')) {
+          playVideo(video);
+        }
+      }
+
+      document.querySelectorAll('[data-next-baseline-toggle]').forEach(function (baselineToggle) {
+        var baselinePanel = document.getElementById(baselineToggle.getAttribute('aria-controls'));
+        if (!baselinePanel) {
+          return;
+        }
+
+        baselineToggle.addEventListener('click', function () {
+          var showBaseline = baselinePanel.hidden;
+          baselinePanel.hidden = !showBaseline;
+          baselineToggle.setAttribute('aria-expanded', showBaseline ? 'true' : 'false');
+          baselineToggle.classList.toggle('next-baseline-toggle--active', showBaseline);
+
+          baselinePanel.querySelectorAll('video').forEach(function (video) {
+            if (showBaseline) {
+              playVideo(video);
+            } else {
+              video.pause();
+            }
+          });
+        });
+      });
+
+      document.querySelectorAll('[data-recovery-toggle]').forEach(function (toggle) {
+        var extraCards = Array.prototype.slice.call(document.querySelectorAll('[data-recovery-extra]'));
+        if (!extraCards.length) {
+          toggle.hidden = true;
+          return;
+        }
+
+        toggle.addEventListener('click', function () {
+          var shouldShow = toggle.getAttribute('aria-expanded') !== 'true';
+          toggle.setAttribute('aria-expanded', shouldShow ? 'true' : 'false');
+          toggle.textContent = shouldShow ? 'Show less' : 'Show more';
+
+          extraCards.forEach(function (card) {
+            card.hidden = !shouldShow;
+            card.querySelectorAll('video').forEach(function (video) {
+              if (shouldShow) {
+                playVideo(video);
+              } else {
+                video.pause();
+              }
+            });
+          });
+        });
+      });
+
+      document.querySelectorAll('[data-highlight-carousel]').forEach(function (carousel) {
+        var sources = Array.prototype.slice.call(carousel.querySelectorAll('[data-highlight-carousel-source]'));
+        var optionCounts = sources.map(function (source) {
+          return source.getAttribute('data-highlight-sources').split('|').filter(Boolean).length;
+        });
+        var slideCount = Math.max.apply(null, optionCounts);
+
+        if (!sources.length || slideCount <= 1) {
+          return;
+        }
+
+        function getOptions(source) {
+          return source.getAttribute('data-highlight-sources').split('|').filter(Boolean);
+        }
+
+        function setSlide(nextIndex) {
+          var slideIndex = ((nextIndex % slideCount) + slideCount) % slideCount;
+          carousel.setAttribute('data-highlight-carousel-index', String(slideIndex));
+
+          sources.forEach(function (source) {
+            var options = getOptions(source);
+            swapVideoSource(source, options[slideIndex % options.length]);
+          });
+        }
+
+        carousel.setAttribute('data-highlight-carousel-index', '0');
+        carousel.querySelectorAll('[data-highlight-carousel-step]').forEach(function (button) {
+          button.addEventListener('click', function () {
+            var currentIndex = Number(carousel.getAttribute('data-highlight-carousel-index')) || 0;
+            var step = Number(button.getAttribute('data-highlight-carousel-step')) || 0;
+            setSlide(currentIndex + step);
+          });
+        });
+      });
+
+      document.querySelectorAll('[data-next-platform]').forEach(function (button) {
+        button.addEventListener('click', function () {
+          var platform = button.getAttribute('data-next-platform');
+
+          document.querySelectorAll('[data-next-platform]').forEach(function (platformButton) {
+            var isActive = platformButton === button;
+            platformButton.classList.toggle('next-platform-chip--active', isActive);
+            platformButton.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+          });
+
+          document.querySelectorAll('[data-next-demo]').forEach(function (demo) {
+            var isActive = demo.getAttribute('data-next-demo') === platform;
+            demo.hidden = !isActive;
+            demo.classList.toggle('next-demo-view--active', isActive);
+            demo.querySelectorAll('video').forEach(function (video) {
+              if (isActive && !video.closest('[hidden]')) {
+                playVideo(video);
+              } else {
+                video.pause();
+              }
+            });
+          });
+        });
+      });
+
+      document.querySelectorAll('video[data-playback-rate]').forEach(function (video) {
+        applyPlaybackRate(video);
+        video.addEventListener('loadedmetadata', function () {
+          applyPlaybackRate(video);
+        });
+      });
+
+    }());
+  </script>
+</body>
+</html>

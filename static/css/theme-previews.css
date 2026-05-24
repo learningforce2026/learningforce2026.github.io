@@ -1,0 +1,205 @@
+/* Three visual directions for the project page structure. */
+
+.theme-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1.45rem auto 0;
+}
+
+.theme-switcher a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.52rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--muted);
+  font-size: clamp(0.95rem, 1.4vw, 1.18rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.theme-switcher a[aria-current="page"] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.theme-lab {
+  --ink: #111a16;
+  --muted: #5d6a64;
+  --line: #d6ded9;
+  --paper: #fbfcfa;
+  --band: #eef3f0;
+  --panel: #ffffff;
+  --accent: #16836c;
+  --accent-2: #c0532c;
+  --accent-3: #315ba7;
+  --shadow: 0 18px 38px rgba(26, 37, 32, 0.1);
+}
+
+.theme-lab .hero-section {
+  border-bottom: 1px solid rgba(214, 222, 217, 0.75);
+}
+
+.theme-lab .video-card,
+.theme-lab .plot-card,
+.theme-lab .hero-video,
+.theme-lab .mini-overview article {
+  box-shadow: 0 14px 34px rgba(23, 33, 29, 0.07);
+}
+
+.theme-lab .gallery-heading h2,
+.theme-lab .paper-title {
+  letter-spacing: 0;
+}
+
+.theme-graphite {
+  --ink: #eef7f1;
+  --muted: #aebbb5;
+  --line: #2d3934;
+  --paper: #0d1110;
+  --band: #151b19;
+  --panel: #111716;
+  --accent: #45c4a0;
+  --accent-2: #f19a66;
+  --accent-3: #91b8ff;
+  --shadow: 0 22px 46px rgba(0, 0, 0, 0.38);
+}
+
+.theme-graphite .site-nav {
+  background: rgba(13, 17, 16, 0.92);
+}
+
+.theme-graphite .hero-section {
+  background:
+    linear-gradient(180deg, rgba(69, 196, 160, 0.08), rgba(13, 17, 16, 0) 46%),
+    var(--paper);
+}
+
+.theme-graphite .project-title {
+  color: #f5fff9;
+  text-shadow: 0 16px 38px rgba(0, 0, 0, 0.34);
+}
+
+.theme-graphite .paper-title {
+  color: #dbe8e1;
+}
+
+.theme-graphite .anchor-buttons a,
+.theme-graphite .read-more-link,
+.theme-graphite .theme-switcher a,
+.theme-graphite .mini-overview article,
+.theme-graphite .video-card,
+.theme-graphite .plot-card {
+  background: #111716;
+  border-color: #303d37;
+}
+
+.theme-graphite .anchor-buttons a:first-child,
+.theme-graphite .theme-switcher a[aria-current="page"] {
+  background: #45c4a0;
+  border-color: #45c4a0;
+  color: #07100d;
+}
+
+.theme-graphite .hero-video,
+.theme-graphite .task-primary {
+  box-shadow: 0 24px 62px rgba(0, 0, 0, 0.46);
+}
+
+.theme-graphite .media-frame,
+.theme-graphite .hero-video {
+  background: #070908;
+}
+
+.theme-graphite .highlight-row-heading h3,
+.theme-graphite .method-section-heading h2,
+.theme-graphite .subsection-heading h3,
+.theme-graphite .task-copy h3,
+.theme-graphite .platform-heading h3,
+.theme-graphite .gallery-heading h2 {
+  color: #f5fff9;
+}
+
+.theme-graphite .footer {
+  background: #070908;
+}
+
+.theme-blueprint {
+  --ink: #142236;
+  --muted: #607089;
+  --line: #cbd7e6;
+  --paper: #f6f9fd;
+  --band: #eaf1f8;
+  --panel: #ffffff;
+  --accent: #1f6f9f;
+  --accent-2: #c05a44;
+  --accent-3: #4e7d45;
+  --shadow: 0 14px 34px rgba(31, 66, 99, 0.13);
+}
+
+.theme-blueprint {
+  background-image:
+    linear-gradient(rgba(31, 111, 159, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 111, 159, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.theme-blueprint .site-nav {
+  background: rgba(246, 249, 253, 0.94);
+}
+
+.theme-blueprint .project-title {
+  font-family: var(--font-main);
+  font-weight: 800;
+}
+
+.theme-blueprint .paper-title,
+.theme-blueprint .gallery-heading h2,
+.theme-blueprint .method-section-heading h2,
+.theme-blueprint .subsection-heading h3,
+.theme-blueprint .platform-heading h3,
+.theme-blueprint .task-copy h3 {
+  color: #142236;
+}
+
+.theme-blueprint .anchor-buttons a,
+.theme-blueprint .read-more-link,
+.theme-blueprint .theme-switcher a,
+.theme-blueprint .mini-overview article,
+.theme-blueprint .video-card,
+.theme-blueprint .plot-card {
+  border-radius: 3px;
+}
+
+.theme-blueprint .anchor-buttons a:first-child,
+.theme-blueprint .theme-switcher a[aria-current="page"] {
+  background: #1f6f9f;
+  border-color: #1f6f9f;
+}
+
+.theme-blueprint .hero-video,
+.theme-blueprint .task-primary {
+  box-shadow: 0 16px 30px rgba(31, 66, 99, 0.16);
+}
+
+.theme-blueprint .section-muted {
+  background:
+    linear-gradient(rgba(31, 111, 159, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 111, 159, 0.055) 1px, transparent 1px),
+    #eaf1f8;
+  background-size: 28px 28px;
+}
+
+@media (max-width: 560px) {
+  .theme-switcher a {
+    flex: 1 1 30%;
+    padding-right: 0.45rem;
+    padding-left: 0.45rem;
+  }
+}

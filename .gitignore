@@ -1,0 +1,10 @@
+.DS_Store
+.DS_store
+**/.DS_Store
+**/.DS_store
+._*
+**/._*
+.idea/
+
+# Keep original/source videos local. The website uses static/videos/project/web/.
+video/
