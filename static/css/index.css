@@ -170,10 +170,10 @@ video {
 }
 
 .project-title {
-  max-width: min(100%, 1120px) !important;
-  font-size: clamp(1.35rem, 2.25vw, 2.08rem) !important;
+  max-width: min(100%, 900px) !important;
+  font-size: 2.48rem !important;
   font-weight: 900;
-  line-height: 1.18 !important;
+  line-height: 1.1 !important;
   letter-spacing: 0 !important;
   overflow-wrap: anywhere;
   text-wrap: balance;
@@ -363,7 +363,7 @@ video {
 
 .highlight-row-heading h3 {
   margin: 0;
-  color: var(--ink);
+  color: var(--track-accent);
   font-family: var(--font-main);
   font-size: clamp(1.18rem, 1.75vw, 1.65rem);
   font-weight: 700;
@@ -378,17 +378,16 @@ video {
 }
 
 .method-label {
-  color: var(--track-accent, var(--section-accent, var(--accent)));
+  color: var(--track-accent);
   font-weight: 900;
 }
 
 .acronym-word {
-  color: var(--ink);
   white-space: nowrap;
 }
 
 .acronym-letter {
-  color: var(--track-accent, var(--section-accent, var(--accent)));
+  color: var(--track-accent);
   font-weight: 900;
 }
 
@@ -645,6 +644,11 @@ video {
   color: var(--next-accent);
 }
 
+.method-title-accent {
+  color: var(--section-accent, var(--accent));
+  font-weight: 900;
+}
+
 .nowrap {
   white-space: nowrap;
 }
@@ -676,7 +680,7 @@ video {
 }
 
 .subsection-heading {
-  max-width: 860px;
+  max-width: 980px;
   margin: 0 auto 1rem;
   text-align: center;
 }
@@ -692,7 +696,7 @@ video {
 }
 
 .subsection-heading p {
-  max-width: 760px;
+  max-width: 940px;
   margin: 0.42rem auto 0;
   color: var(--muted);
   font-size: 0.98rem;
@@ -939,7 +943,7 @@ video {
 }
 
 .next-sensor-claim p {
-  max-width: 850px;
+  max-width: 1040px;
   margin: 0;
   color: var(--muted);
   font-size: clamp(0.94rem, 1.24vw, 1.08rem);
@@ -1002,16 +1006,16 @@ video {
   margin: 0.55rem auto 0;
   color: var(--muted);
   font-size: clamp(0.92rem, 1.08vw, 1rem);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.45;
   text-wrap: pretty;
 }
 
 .next-workflow-steps {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(0.7rem, 1.35vw, 0.95rem);
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: clamp(1.35rem, 3vw, 2.2rem);
+  align-items: stretch;
   width: 100%;
   max-width: 1180px;
   margin: 0 auto;
@@ -1019,9 +1023,11 @@ video {
 
 .next-workflow-step {
   display: grid;
+  align-content: start;
   gap: 0.58rem;
   justify-items: center;
   width: 100%;
+  height: 100%;
   min-width: 0;
   padding-top: 1rem;
   border-top: 1px solid var(--next-line);
@@ -1030,7 +1036,7 @@ video {
 .next-step-label {
   margin: 0;
   color: var(--section-accent, var(--accent));
-  font-size: 0.76rem;
+  font-size: clamp(1rem, 1.45vw, 1.24rem);
   font-weight: 900;
   letter-spacing: 0.08em;
   line-height: 1.2;
@@ -1050,14 +1056,67 @@ video {
   white-space: normal;
 }
 
+.next-workflow-detail {
+  max-width: 92%;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: clamp(0.84rem, 1vw, 0.94rem);
+  font-weight: 600;
+  line-height: 1.42;
+  text-align: justify;
+  text-align-last: left;
+}
+
 .next-workflow-pair {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(0.38rem, 0.85vw, 0.62rem);
   align-items: center;
   justify-content: center;
-  width: min(100%, 29rem);
+  width: min(100%, 23rem);
   min-width: 0;
+}
+
+.next-workflow-pair--deployment {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: clamp(0.55rem, 1.15vw, 0.85rem);
+  width: 100%;
+}
+
+.next-workflow-idm {
+  display: grid;
+  gap: 0.85rem;
+  justify-items: center;
+  margin: 0;
+  min-width: 0;
+}
+
+.next-workflow-idm img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.next-workflow-idm p {
+  max-width: 100%;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(0.88rem, 1vw, 0.98rem);
+  font-weight: 600;
+  line-height: 1.38;
+  text-align: justify;
+  text-align-last: left;
+}
+
+.next-workflow-note {
+  max-width: 1080px;
+  margin: 0.15rem auto 0;
+  color: var(--ink);
+  font-size: clamp(1.1rem, 1.55vw, 1.32rem);
+  font-weight: 800;
+  line-height: 1.38;
+  text-align: center;
 }
 
 .next-workflow-video-card {
@@ -1081,39 +1140,6 @@ video {
 
 .next-workflow-media--tall {
   aspect-ratio: 8 / 7;
-}
-
-.next-workflow-diagram {
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  margin: 0;
-  min-width: 0;
-  overflow: visible;
-  background: transparent;
-}
-
-.next-workflow-diagram img {
-  display: block;
-  width: auto;
-  max-width: 100%;
-  max-height: clamp(11rem, 20vw, 15.5rem);
-  object-fit: contain;
-}
-
-.next-workflow-diagram--deployment img {
-  max-height: clamp(11rem, 20vw, 15.5rem);
-}
-
-.next-workflow-diagram--fsid {
-  align-self: center;
-  justify-items: center;
-}
-
-.next-workflow-diagram--fsid img {
-  width: clamp(5.2rem, 6.8vw, 7rem);
-  max-width: 100%;
-  max-height: none;
 }
 
 .next-workflow-media--network {
@@ -1154,21 +1180,6 @@ video {
   width: 100%;
   max-height: 82%;
   object-fit: contain;
-}
-
-.next-workflow-caption {
-  max-width: 92%;
-  margin: 0 auto;
-  color: var(--muted);
-  font-size: clamp(0.78rem, 1vw, 0.9rem);
-  font-weight: 600;
-  line-height: 1.35;
-  text-align: center;
-}
-
-.next-workflow-caption strong {
-  color: var(--next-accent);
-  font-weight: 900;
 }
 
 .next-realtime-actions {
@@ -1682,7 +1693,7 @@ video {
 }
 
 .task-showcase-heading p {
-  max-width: 760px;
+  max-width: 980px;
   margin: 0.45rem auto 0;
   color: var(--muted);
   font-size: clamp(0.88rem, 1.05vw, 1rem);
@@ -1907,6 +1918,10 @@ video {
     line-height: 1.08;
   }
 
+  .project-title {
+    font-size: 2rem !important;
+  }
+
   .section {
     padding: 3.25rem 0;
   }
@@ -1992,18 +2007,13 @@ video {
   }
 
   .next-workflow-pair {
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr);
     gap: clamp(0.32rem, 1.4vw, 0.5rem);
     width: 100%;
   }
 
-  .next-workflow-diagram img,
-  .next-workflow-diagram--deployment img {
-    max-height: clamp(7.6rem, 33vw, 10.4rem);
-  }
-
-  .next-workflow-diagram--fsid img {
-    width: clamp(4.15rem, 17vw, 5.35rem);
+  .next-workflow-pair--deployment {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .task-combined-card {
@@ -2050,7 +2060,7 @@ video {
 @media (max-width: 560px) {
   .project-title {
     max-width: 350px !important;
-    font-size: 1.22rem !important;
+    font-size: 1.56rem !important;
   }
 
   .paper-title {

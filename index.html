@@ -29,7 +29,7 @@
     <section class="hero-section">
       <div class="page-container page-container--wide">
         <div class="hero-copy">
-          <h1 class="project-title">Learning Force Sensing and Force-Aware Policies for Any Commodity Robot Arm</h1>
+          <h1 class="project-title">Learning Force Sensing and Force-Aware Policies for Any Robot Arm</h1>
         </div>
       </div>
     </section>
@@ -51,7 +51,7 @@
         <div class="highlight-rows highlight-rows--paired">
           <section class="highlight-row">
             <div class="highlight-row-heading">
-              <h3><span class="acronym-title"><span class="method-label method-label--next">NEXT</span>: <span class="acronym-word"><span class="acronym-letter">N</span>eural</span> <span class="acronym-word"><span class="acronym-letter">Ex</span>ternal</span> <span class="acronym-word"><span class="acronym-letter">T</span>orque</span> <span class="acronym-word">Estimation</span></span></h3>
+              <h3><span class="acronym-title"><span class="method-label method-label--next">NEXT</span>: <span class="acronym-word"><span class="acronym-letter">N</span>eural</span> <span class="acronym-word"><span class="acronym-letter">EX</span>ternal</span> <span class="acronym-word"><span class="acronym-letter">T</span>orque</span></span></h3>
               <p>Estimates external joint torque without dedicated force sensors.</p>
             </div>
             <div class="highlight-video-row highlight-video-row--single">
@@ -84,7 +84,7 @@
                       src="./static/videos/project/web/highlight/nist_task-web.mp4"
                       type="video/mp4"
                       data-highlight-carousel-source
-                      data-highlight-sources="./static/videos/project/web/highlight/nist_task-web.mp4|./static/videos/project/web/tasks/nist-belt-success-long-horizon-web.mp4|./static/videos/project/web/tasks/cap-screwing-success-web.mp4|./static/videos/project/web/tasks/nist-belt-robustness-black-pulley-web.mp4|./static/videos/project/web/tasks/lego-success-third-person-web.mp4">
+                      data-highlight-sources="./static/videos/project/web/highlight/nist_task-web.mp4|./static/videos/project/web/tasks/cap-screwing-success-web.mp4|./static/videos/project/web/tasks/nist-belt-robustness-black-pulley-web.mp4">
                   </video>
                 </div>
               </figure>
@@ -95,7 +95,7 @@
                       src="./static/videos/project/tasks/tool-clean-up-success-2.mp4"
                       type="video/mp4"
                       data-highlight-carousel-source
-                      data-highlight-sources="./static/videos/project/tasks/tool-clean-up-success-2.mp4|./static/videos/project/web/tasks/tool-clean-up-success-1-web.mp4|./static/videos/project/web/tasks/lego-success-web.mp4|./static/videos/project/web/tasks/tool-clean-up-robustness-web.mp4">
+                      data-highlight-sources="./static/videos/project/tasks/tool-clean-up-success-2.mp4|./static/videos/project/web/tasks/lego-success-web.mp4|./static/videos/project/web/tasks/tool-clean-up-robustness-web.mp4">
                   </video>
                 </div>
               </figure>
@@ -110,7 +110,7 @@
     <section class="section method-section" id="next">
       <div class="page-container page-container--wide">
         <div class="method-section-heading">
-          <h2><span class="method-label method-label--next">NEXT</span>: <span class="acronym-title"><span class="acronym-word"><span class="acronym-letter">N</span>eural</span> <span class="acronym-word"><span class="acronym-letter">Ex</span>ternal</span> <span class="acronym-word"><span class="acronym-letter">T</span>orque</span> <span class="acronym-word">Estimation</span></span></h2>
+          <h2><span class="method-title-accent method-title-accent--next">NEXT</span>: <span class="acronym-word"><span class="method-title-accent method-title-accent--next">N</span>eural</span> <span class="acronym-word"><span class="method-title-accent method-title-accent--next">Ex</span>ternal</span> <span class="acronym-word"><span class="method-title-accent method-title-accent--next">T</span>orque</span> Estimation</h2>
           <p>Data-driven external joint torque estimation without dedicated force-torque sensors.</p>
         </div>
 
@@ -225,7 +225,7 @@
         <div class="subsection-block next-sensor-block">
           <div class="next-sensor-claim">
             <h3><span class="method-token method-token--next">NEXT</span> matches factory-level joint-torque sensors.</h3>
-            <p>We compare NEXT with factory-level external force-torque sensor on a Franka arm. NEXT closely matches the built-in external torque estimate without sensor-signal supervision.</p>
+            <p>We compare NEXT with Franka's dedicated joint torque sensors. NEXT closely matches Franka's factory external torque estimate.</p>
           </div>
 
           <div class="next-sensor-grid">
@@ -305,14 +305,13 @@
 
         <div class="subsection-block next-workflow-block">
           <div class="next-workflow-claim">
-            <h3><span class="method-token method-token--next">NEXT</span> only needs 10 minutes of data and 1 minute of training.</h3>
-            <p>We fit a free-space inverse dynamics (FSID) model from short, contact-free motion. At deployment, NEXT subtracts the learned free-space torque from measured motor torque, leaving an external torque signal caused by contact.</p>
+            <h3><span class="method-token method-token--next">NEXT</span> only needs <span class="method-token method-token--next">10 min</span> of data and <span class="method-token method-token--next">1 min</span> of training to set up.</h3>
           </div>
 
           <div class="next-workflow-steps">
             <article class="next-workflow-step">
               <p class="next-step-label">Step 1</p>
-              <h3>Data Collection and FSID Model Training</h3>
+              <h3>Data Collection and Training</h3>
               <div class="next-workflow-pair">
                 <figure class="video-card next-workflow-video-card">
                   <div class="media-frame next-workflow-media next-workflow-media--wide">
@@ -321,17 +320,18 @@
                     </video>
                   </div>
                 </figure>
-                <figure class="next-workflow-diagram next-workflow-diagram--fsid">
-                  <img src="./static/images/project/next/fsid_simpl.png" alt="Simplified FSID training diagram.">
-                </figure>
               </div>
-              <p class="next-workflow-caption">Data collection <strong>(&asymp; 10 min)</strong>; model training <strong>(&asymp; 1 min)</strong>.</p>
+              <p class="next-workflow-detail">We collect only 10 minutes of free-space data and train an LSTM to predict measured joint torque in free-space from joint states.</p>
             </article>
 
             <article class="next-workflow-step">
               <p class="next-step-label">Step 2</p>
-              <h3>Deploy to get external torque signal</h3>
-              <div class="next-workflow-pair">
+              <h3>Deploy for External Joint Torque</h3>
+              <div class="next-workflow-pair next-workflow-pair--deployment">
+                <figure class="next-workflow-idm">
+                  <img src="./static/images/project/next/next_idm.png" alt="NEXT inverse dynamics deployment diagram.">
+                  <p>At deployment, <span class="method-token method-token--next">NEXT</span> subtracts the predicted free-space torque from measured motor torque (derived from scaling joint current by the torque constant K), yielding external torque.</p>
+                </figure>
                 <figure class="video-card next-workflow-video-card">
                   <div class="media-frame next-workflow-media next-workflow-media--tall">
                     <video autoplay muted loop playsinline preload="metadata">
@@ -339,13 +339,10 @@
                     </video>
                   </div>
                 </figure>
-                <figure class="next-workflow-diagram next-workflow-diagram--deployment">
-                  <img src="./static/images/project/next/deployment.png" alt="NEXT deployment diagram for external torque prediction.">
-                </figure>
               </div>
-              <p class="next-workflow-caption">Subtract free-space torque to recover contact torque.</p>
             </article>
           </div>
+          <p class="next-workflow-note">No external dedicated force sensors are required in data collection nor deployment!</p>
           <div class="next-realtime-actions">
             <button class="next-baseline-toggle next-realtime-toggle" type="button" aria-expanded="false" aria-controls="next-realtime-panel" data-next-baseline-toggle>Show real-time data collection and deployment</button>
           </div>
@@ -365,7 +362,7 @@
     <section class="section method-section" id="first">
       <div class="page-container page-container--wide">
         <div class="method-section-heading">
-          <h2><span class="method-label method-label--first">FIRST</span>: <span class="acronym-title"><span class="acronym-word"><span class="acronym-letter">F</span>orce-<span class="acronym-letter">I</span>nformed</span> <span class="acronym-word"><span class="acronym-letter">R</span>e-<span class="acronym-letter">S</span>ampling</span> <span class="acronym-word"><span class="acronym-letter">T</span>raining</span></span></h2>
+          <h2><span class="method-title-accent">FIRST</span>: <span class="acronym-word"><span class="method-title-accent">F</span>orce-<span class="method-title-accent">I</span>nformed</span> <span class="acronym-word"><span class="method-title-accent">R</span>e-<span class="method-title-accent">S</span>ampling</span> <span class="acronym-word"><span class="method-title-accent">T</span>raining</span></h2>
           <p>Use estimated external torque to up-sample pre-contact and contact data during behavior cloning.</p>
         </div>
 
@@ -490,7 +487,7 @@
           <div class="task-showcase-block">
             <div class="task-showcase-heading">
               <h4>Robustness</h4>
-              <p>Re-sampling near-contact data during training improves robustness to task perturbations.</p>
+              <p>Re-sampling pre-contact and contact data during training improves robustness to task perturbations.</p>
             </div>
             <div class="task-showcase-grid task-showcase-grid--three">
               <article class="task-showcase-card">
@@ -529,7 +526,7 @@
           <div class="task-showcase-block">
             <div class="task-showcase-heading">
               <h4>Recovery Behavior</h4>
-              <p>Re-sampling near-contact data during training encourages more recovery behavior than the baseline.</p>
+              <p>Re-sampling pre-contact and contact data during training encourages more recovery behavior than the baseline.</p>
             </div>
             <div class="task-showcase-grid task-showcase-grid--three" id="recovery-extra-grid">
               <article class="task-showcase-card">
@@ -601,7 +598,7 @@
           <div class="task-showcase-block">
             <div class="task-showcase-heading">
               <h4>Vision + Torque Policy without FIRST</h4>
-              <p>Without force-informed re-sampling, the baseline often fails to succeed in critical contact-rich task phases .</p>
+              <p>Without force-informed re-sampling, the baseline often fails to succeed in critical contact-rich task phases.</p>
             </div>
             <div class="task-showcase-grid task-showcase-grid--three">
               <article class="task-showcase-card">
